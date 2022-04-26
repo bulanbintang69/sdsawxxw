@@ -13,10 +13,10 @@ from helper_func import encode
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote = True)
     try:
-        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
+        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\nDm <a href='http://t.me/Paketu_bot'>me</a> for Credit\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
+        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\nDm <a href='http://t.me/Paketu_bot'>me</a> for Credit\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
     except Exception as e:
         print(e)
         await reply_text.edit_text("Something went Wrong..!")
