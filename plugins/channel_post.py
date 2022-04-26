@@ -13,10 +13,10 @@ from helper_func import encode
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote = True)
     try:
-        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n(っ'-')╮=͟͟💌")
+        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n(っ'-')╮=͟͟💌")
+        post_message = await message.copy(chat_id = client.db_channel.id, caption="Uploader : <a href='https://t.me/StatusWhatsapp0'>Status Whatsapp</a>\n\n<a href='http://t.me/Paketu_bot'>__dm me for Credit__</a>\n\nJoin✨ Share✨ Like\n\n(っ'-')╮=͟͟💌")
     except Exception as e:
         print(e)
         await reply_text.edit_text("Something went Wrong..!")
@@ -26,7 +26,7 @@ async def channel_post(client: Client, message: Message):
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
 
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Status Whatsapp", url=f'https://t.me/StatusWhatsapp0')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡️Status Whatsapp⚡️", url=f'https://t.me/StatusWhatsapp0')]])
 
     await reply_text.edit(f"<b>Here is your link</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
 
@@ -43,7 +43,7 @@ async def new_post(client: Client, message: Message):
     string = f"get-{converted_id}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Status Whatsapp", url=f'https://t.me/StatusWhatsapp0')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡️Status Whatsapp⚡️", url=f'https://t.me/StatusWhatsapp0')]])
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
